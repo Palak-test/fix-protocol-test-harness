@@ -74,9 +74,14 @@ class FixSession:
                             raise RuntimeError('Session not connected')
                         # Placeholder for receiving logic
                         return raw_message
+
                 def send_message(self, message):
-                    """Simulate sending a FIX message."""
+                    """Simulate sending a FIX message with optional delay."""
                     self._ensure_connected()
+                    delay = self.config.get('message_delay', 0)
+                    if delay > 0:
+                        import time
+                        time.sleep(delay)
                     # Placeholder for sending logic
                     return True
 
