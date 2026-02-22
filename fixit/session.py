@@ -13,6 +13,11 @@ class FixSessionManager:
 # session.py for Fixit
 
 class FixSession:
+            def shutdown(self):
+                """Gracefully shutdown the session."""
+                if self.state == 'connected':
+                    self.disconnect()
+                # Additional cleanup logic can be added here
         def get_state(self):
             """Return the current session state."""
             return self.state
