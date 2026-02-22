@@ -1,10 +1,12 @@
-# FIX Protocol Test Harness
+# Fixit Protocol Test Harness
 
-This project provides a starting point for a FIX protocol test harness.
+A custom-built tool for testing and simulating FIX protocol sessions.
 
-## Getting Started
-- Add your source code and documentation here.
+## Features
+- Modular design
+- Easy configuration
+- Extensible for custom FIX scenarios
 
 ---
 
-*Initial commit: start*
+*Project initialized*
