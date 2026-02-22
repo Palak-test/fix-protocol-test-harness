@@ -1,6 +1,13 @@
 # Fixit: Core FIX Engine
 
 class FixMessageParser:
+		def validate(self, message_dict):
+			"""Basic validation: check for required FIX fields."""
+			required = ['8', '9', '35', '49', '56', '10']
+			for field in required:
+				if field not in message_dict:
+					return False
+			return True
 	"""Basic FIX message parser skeleton."""
 	def __init__(self):
 		pass
