@@ -15,8 +15,17 @@ class FixSession:
             if key not in self.config:
                 raise ValueError(f"Missing required config: {key}")
 
-    def connect(self):
-        self.state = 'connected'
+    def connect(self, retries=3):
+        attempt = 0
+        while attempt < retries:
+            try:
+                # Simulate connection logic
+                self.state = 'connected'
+                return True
+            except Exception:
+                attempt += 1
+        self.state = 'disconnected'
+        return False
 
     def disconnect(self):
         self.state = 'disconnected'
