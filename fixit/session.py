@@ -1,3 +1,15 @@
+class FixSessionManager:
+    """Manages multiple FIX sessions."""
+    def __init__(self):
+        self.sessions = {}
+
+    def add_session(self, session_id, config=None):
+        session = FixSession(session_id, config)
+        self.sessions[session_id] = session
+        return session
+
+    def get_session(self, session_id):
+        return self.sessions.get(session_id)
 # session.py for Fixit
 
 class FixSession:
