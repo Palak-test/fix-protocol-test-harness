@@ -20,6 +20,10 @@ class FixSessionManager:
 # session.py for Fixit
 
 class FixSession:
+                        def log_message(self, message, log_file="fixit_messages.log"):
+                            """Log a FIX message to a file."""
+                            with open(log_file, "a") as f:
+                                f.write(message + "\n")
                     def receive_message(self, raw_message):
                         """Simulate receiving a FIX message."""
                         if self.state != 'connected':
