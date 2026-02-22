@@ -27,6 +27,13 @@ class FixSessionManager:
 # session.py for Fixit
 
 class FixSession:
+                                def send_heartbeat(self):
+                                    """Simulate sending a FIX heartbeat message."""
+                                    if self.state != 'connected':
+                                        raise RuntimeError('Session not connected')
+                                    heartbeat_msg = "8=FIX.4.2|9=5|35=0|49=CLIENT|56=SERVER|10=000|"
+                                    self.send_message(heartbeat_msg)
+                                    return heartbeat_msg
                             def enable_encryption(self, enabled=True):
                                 """Enable or disable encryption for the session (placeholder)."""
                                 self.encryption_enabled = enabled
