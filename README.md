@@ -44,6 +44,25 @@ A modern, modular, and extensible test harness for the FIX (Financial Informatio
 - **Statistics**: Collects and reports message statistics.
 - **Utilities**: Helpers for config loading, pretty-printing, and filtering.
 
+## Architecture Diagram
+
+```mermaid
+flowchart TD
+    CLI[CLI / Main App]
+    SessionManager[SessionManager]
+    FixSession[FixSession]
+    FixMessageParser[FixMessageParser]
+    Statistics[Statistics]
+    Utilities[Utilities]
+
+    CLI --> SessionManager
+    SessionManager --> FixSession
+    FixSession <--> FixMessageParser
+    FixSession --> Statistics
+    FixSession --> Utilities
+    FixMessageParser --> Utilities
+```
+
 ## Usage Example
 
 ```python
