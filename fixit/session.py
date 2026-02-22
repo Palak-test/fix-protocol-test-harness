@@ -1,4 +1,11 @@
 class FixSessionManager:
+            def reload_config(self, session_id, new_config):
+                """Reload configuration for a session without restart."""
+                session = self.get_session(session_id)
+                if not session:
+                    raise ValueError('Session not found')
+                session.config = new_config
+                session.validate_config()
         def replay_messages(self, session_id, messages):
             """Simulate replaying a list of messages to a session."""
             session = self.get_session(session_id)
