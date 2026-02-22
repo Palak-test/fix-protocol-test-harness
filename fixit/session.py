@@ -20,6 +20,9 @@ class FixSessionManager:
 # session.py for Fixit
 
 class FixSession:
+                            def enable_encryption(self, enabled=True):
+                                """Enable or disable encryption for the session (placeholder)."""
+                                self.encryption_enabled = enabled
                         def log_message(self, message, log_file="fixit_messages.log"):
                             """Log a FIX message to a file."""
                             with open(log_file, "a") as f:
