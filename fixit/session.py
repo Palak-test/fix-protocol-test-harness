@@ -76,10 +76,13 @@ class FixSession:
                         return raw_message
                 def send_message(self, message):
                     """Simulate sending a FIX message."""
-                    if self.state != 'connected':
-                        raise RuntimeError('Session not connected')
+                    self._ensure_connected()
                     # Placeholder for sending logic
                     return True
+
+                def _ensure_connected(self):
+                    if self.state != 'connected':
+                        raise RuntimeError('Session not connected')
             def shutdown(self):
                 """Gracefully shutdown the session."""
                 if self.state == 'connected':

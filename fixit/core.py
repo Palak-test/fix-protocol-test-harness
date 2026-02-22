@@ -20,8 +20,10 @@ class FixMessageParser:
 
 	def parse(self, message: str):
 		"""Parse a FIX message string into a dictionary. Returns empty dict on error."""
+		return self._parse_fields(message)
+
+	def _parse_fields(self, message: str):
 		try:
-			# Placeholder: split by | and then by =
 			fields = message.strip().split('|')
 			result = {}
 			for field in fields:
@@ -29,6 +31,5 @@ class FixMessageParser:
 					k, v = field.split('=', 1)
 					result[k] = v
 			return result
-		except Exception as e:
-			# Log error or handle as needed
+		except Exception:
 			return {}
