@@ -1,3 +1,13 @@
+def pretty_print_message(message_dict):
+	"""Return a human-readable string for a FIX message dict."""
+	if not isinstance(message_dict, dict):
+		return str(message_dict)
+	return '\n'.join(f"{k}: {v}" for k, v in message_dict.items())
+def pretty_print_message(message_dict):
+	"""Return a human-readable string for a FIX message dict."""
+	if not isinstance(message_dict, dict):
+		return str(message_dict)
+	return '\n'.join(f"{k}: {v}" for k, v in message_dict.items())
 def filter_messages(messages, msg_type):
 	"""Return only messages of a given type (tag 35)."""
 	filtered = []
