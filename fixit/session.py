@@ -35,10 +35,20 @@ class FixSession:
             return self.state
     """Basic FIX session handler."""
     def __init__(self, session_id, config=None):
+    def __init__(self, session_id, config=None):
         self.session_id = session_id
         self.state = 'disconnected'
         self.config = config or {}
         self.validate_config()
+        self.in_seq_num = 1
+        self.out_seq_num = 1
+    def next_out_seq(self):
+        self.out_seq_num += 1
+        return self.out_seq_num
+
+    def next_in_seq(self):
+        self.in_seq_num += 1
+        return self.in_seq_num
 
     def validate_config(self):
         # Example: require 'host' and 'port' in config
