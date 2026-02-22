@@ -13,6 +13,9 @@ class FixSessionManager:
 # session.py for Fixit
 
 class FixSession:
+        def get_state(self):
+            """Return the current session state."""
+            return self.state
     """Basic FIX session handler."""
     def __init__(self, session_id, config=None):
         self.session_id = session_id
