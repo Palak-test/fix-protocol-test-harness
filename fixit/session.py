@@ -1,3 +1,7 @@
+
+"""
+Session management for Fixit Protocol Test Harness.
+"""
 class FixSessionManager:
                 def __init__(self):
                     self.sessions = {}

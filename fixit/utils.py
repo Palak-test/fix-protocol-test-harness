@@ -15,7 +15,10 @@ def filter_messages(messages, msg_type):
 		if isinstance(msg, dict) and msg.get('35') == msg_type:
 			filtered.append(msg)
 	return filtered
-# Fixit: Utilities
+
+"""
+Utility functions for Fixit Protocol Test Harness.
+"""
 
 import yaml
 import json

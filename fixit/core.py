@@ -1,4 +1,7 @@
-# Fixit: Core FIX Engine
+
+"""
+Core FIX Engine for Fixit Protocol Test Harness.
+"""
 
 class FixMessageParser:
 			def get_message_type(self, message_dict):

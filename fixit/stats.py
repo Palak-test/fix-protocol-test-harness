@@ -1,3 +1,7 @@
+
+"""
+Statistics and reporting for Fixit Protocol Test Harness.
+"""
 # stats.py for Fixit
 
 def calculate_message_stats(messages):
