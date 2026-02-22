@@ -1,0 +1,3 @@
+# requirements.txt for Fixit
+pytest
+pyyaml
