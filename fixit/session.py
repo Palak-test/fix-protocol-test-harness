@@ -1,4 +1,15 @@
 class FixSessionManager:
+                def __init__(self):
+                    self.sessions = {}
+                    self.features = {}
+                def enable_feature(self, feature_name):
+                    self.features[feature_name] = True
+
+                def disable_feature(self, feature_name):
+                    self.features[feature_name] = False
+
+                def is_feature_enabled(self, feature_name):
+                    return self.features.get(feature_name, False)
             def reload_config(self, session_id, new_config):
                 """Reload configuration for a session without restart."""
                 session = self.get_session(session_id)
