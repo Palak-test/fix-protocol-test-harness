@@ -13,6 +13,12 @@ class FixSessionManager:
 # session.py for Fixit
 
 class FixSession:
+                def send_message(self, message):
+                    """Simulate sending a FIX message."""
+                    if self.state != 'connected':
+                        raise RuntimeError('Session not connected')
+                    # Placeholder for sending logic
+                    return True
             def shutdown(self):
                 """Gracefully shutdown the session."""
                 if self.state == 'connected':
