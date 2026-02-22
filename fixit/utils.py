@@ -1,3 +1,10 @@
+def filter_messages(messages, msg_type):
+	"""Return only messages of a given type (tag 35)."""
+	filtered = []
+	for msg in messages:
+		if isinstance(msg, dict) and msg.get('35') == msg_type:
+			filtered.append(msg)
+	return filtered
 # Fixit: Utilities
 
 import yaml
