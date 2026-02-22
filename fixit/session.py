@@ -27,6 +27,15 @@ class FixSessionManager:
 # session.py for Fixit
 
 class FixSession:
+                                    def handle_admin_message(self, message):
+                                        """Handle admin-level FIX messages (e.g., logon, logout, heartbeat)."""
+                                        msg_type = None
+                                        if isinstance(message, dict):
+                                            msg_type = message.get('35')
+                                        if msg_type in ['A', '5', '0']:
+                                            # Logon (A), Logout (5), Heartbeat (0)
+                                            return f"Handled admin message type: {msg_type}"
+                                        return "Not an admin message"
                                 def send_heartbeat(self):
                                     """Simulate sending a FIX heartbeat message."""
                                     if self.state != 'connected':
