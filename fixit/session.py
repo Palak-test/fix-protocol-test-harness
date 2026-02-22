@@ -1,4 +1,11 @@
 class FixSessionManager:
+        def replay_messages(self, session_id, messages):
+            """Simulate replaying a list of messages to a session."""
+            session = self.get_session(session_id)
+            if not session:
+                raise ValueError('Session not found')
+            for msg in messages:
+                session.send_message(msg)
     """Manages multiple FIX sessions."""
     def __init__(self):
         self.sessions = {}
