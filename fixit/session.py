@@ -27,6 +27,9 @@ class FixSessionManager:
 # session.py for Fixit
 
 class FixSession:
+                                        def set_protocol_version(self, version="FIX.4.2"):
+                                            """Set the FIX protocol version for the session."""
+                                            self.protocol_version = version
                                     def handle_admin_message(self, message):
                                         """Handle admin-level FIX messages (e.g., logon, logout, heartbeat)."""
                                         msg_type = None
