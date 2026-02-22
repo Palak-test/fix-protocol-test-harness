@@ -13,6 +13,12 @@ class FixSessionManager:
 # session.py for Fixit
 
 class FixSession:
+                    def receive_message(self, raw_message):
+                        """Simulate receiving a FIX message."""
+                        if self.state != 'connected':
+                            raise RuntimeError('Session not connected')
+                        # Placeholder for receiving logic
+                        return raw_message
                 def send_message(self, message):
                     """Simulate sending a FIX message."""
                     if self.state != 'connected':
