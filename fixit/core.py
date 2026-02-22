@@ -1,7 +1,10 @@
-# ByteFix: Core FIX Engine
+# Fixit: Core FIX Engine
 
-This module provides the core logic for parsing and handling FIX messages.
+class FixMessageParser:
+	"""Basic FIX message parser skeleton."""
+	def __init__(self):
+		pass
 
-- Handles message parsing
-- Provides base classes for sessions
-- Designed for extensibility
+	def parse(self, message: str):
+		# TODO: Implement parsing logic
+		return {}
