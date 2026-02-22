@@ -97,3 +97,29 @@ MIT License. See [LICENSE](LICENSE) for details.
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for release history.
+
+## Project Structure
+
+```
+fix-protocol-test-harness/
+├── fixit/                  # Main package source
+│   ├── core.py             # FIX message parsing logic
+│   ├── main.py             # CLI entry point
+│   ├── session.py          # Session management
+│   ├── stats.py            # Statistics and reporting
+│   ├── utils.py            # Utility functions
+│   └── README.md           # Package-level documentation
+├── tests/                  # Unit tests
+│   ├── test_core.py        # Tests for core logic
+│   ├── test_session.py     # Tests for session management
+│   └── __init__.py         # Test package marker
+├── CHANGELOG.md            # Release history
+├── CONTRIBUTING.md         # Contribution guidelines
+├── DEVELOPER.md            # Developer notes
+├── LICENSE                 # License file
+├── README.md               # Project overview (this file)
+├── requirements.txt        # Python dependencies
+├── .flake8                 # Linting configuration
+├── .editorconfig           # Editor configuration
+└── setup.cfg               # Package setup configuration
+```
