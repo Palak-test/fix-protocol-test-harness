@@ -1,6 +1,9 @@
 # Fixit: Core FIX Engine
 
 class FixMessageParser:
+			def get_message_type(self, message_dict):
+				"""Return the message type (tag 35) if present."""
+				return message_dict.get('35', None)
 		def validate(self, message_dict):
 			"""Basic validation: check for required FIX fields."""
 			required = ['8', '9', '35', '49', '56', '10']
